@@ -1,18 +1,100 @@
 <html>
   <head>
     <script src="https://cdn.jsdelivr.net/npm/aframe@0.8.2/dist/aframe-master.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@3.x.x/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.x.x/dist/aframe-event-set-component.min.js"></script>
+    <script>
+      function nextScene() {
+        document.getElementById("scene-1").setAttribute("visible", "false");
+        document.getElementById("scene-2").setAttribute("visible", "true");
+      }
+    </script>
   </head>
   <body>
     <a-scene stats>
-      <a-entity camera look-controls position="0 1.5 0">
-        <a-cursor></a-cursor>
-      </a-entity>
       <a-assets>
-        <a-asset-item id="gwanghwamun" src="gwanghwamun.gltf">
-        </a-assets>
-      <a-gltf-model position="0 0 -30" src="#gwanghwamun"></a-gltf-model>
-      <a-plane position="0 0 -11" rotation="-90 0 0" width="50" height="200" color="#777777"></a-plane>
-      <a-sky color="#bbdff9 "></a-sky>
+        <a-asset-item
+          id="gwanghwamun"
+          src="assets/gwanghwamun.gltf"
+        ></a-asset-item>
+        <img id="background" src="assets/bckgnd.jpg" />
+        <img
+          id="thumb-1"
+          crossorigin="anonymous"
+          src="https://i.imgur.com/gYAdNIM.png"
+        />
+        <img
+          id="thumb-2"
+          crossorigin="anonymous"
+          src="https://i.imgur.com/c0rKqEl.png"
+        />
+        <img
+          id="thumb-3"
+          crossorigin="anonymous"
+          src="https://i.imgur.com/RHpJqjl.png"
+        />
+      </a-assets>
+      <a-entity camera look-controls position="0 1.5 0">
+        <a-cursor>
+          <a-animation
+            begin="click"
+            easing="ease-in"
+            attribute="scale"
+            fill="backwards"
+            from="0.1 0.1 0.1"
+            to="1 1 1"
+            dur="150"
+          ></a-animation>
+          <a-animation
+            begin="cursor-fusing"
+            easing="ease-in"
+            attribute="scale"
+            from="1 1 1"
+            to="0.1 0.1 0.1"
+            dur="1500"
+          ></a-animation>
+        </a-cursor>
+      </a-entity>
+
+      <a-entity id="scene-1" visible="true">
+
+        <a-sky  
+          id="image-360"
+          src="#background"
+          radius="150"
+          phi-start="90"
+        ></a-sky>
+        <!-- <a-sky color="#9bd1fd"></a-sky> -->
+        <a-entity
+          class="link"
+          position="0 1.6 -3"
+          geometry="primitive: plane; height: 1; width: 1"
+          material="shader: flat; src: #thumb-1"
+          event-set__1="_event: mousedown; scale: 1 1 1"
+          event-set__2="_event: mouseup; scale: 1.1 1.1 1"
+          event-set__3="_event: mouseenter; scale: 1.1 1.1 1"
+          event-set__4="_event: mouseleave; scale: 1 1 1"
+          onclick="nextScene()"
+        ></a-entity>
+      </a-entity>
+
+      <a-entity id="scene-2" visible="false">
+        <a-sky color="#9bd1fd"></a-sky>
+        <a-plane
+        position="0 0 -11"
+        rotation="-90 0 0"
+        width="50"
+        height="200"
+        color="#777777"
+      ></a-plane>
+        <a-gltf-model
+        position="0 0 -30"
+        src="#gwanghwamun"
+        scale="0.9 0.9 0.9"
+      ></a-gltf-model>
+      </a-entity>
+
     </a-scene>
   </body>
 </html>
