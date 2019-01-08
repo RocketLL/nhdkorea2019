@@ -22,17 +22,17 @@
         <img
           id="thumb-1"
           crossorigin="anonymous"
-          src="https://i.imgur.com/gYAdNIM.png"
+          src="https://linx.yunkyu.com/selif/1t56s1to.png"
         />
         <img
           id="thumb-2"
           crossorigin="anonymous"
-          src="https://i.imgur.com/c0rKqEl.png"
+          src="https://linx.yunkyu.com/selif/jqf4e7uw.png"
         />
         <img
           id="thumb-3"
           crossorigin="anonymous"
-          src="https://i.imgur.com/RHpJqjl.png"
+          src="https://linx.yunkyu.com/selif/6asc42cu.png"
         />
       </a-assets>
       <a-entity camera look-controls position="0 1.5 0">
@@ -58,8 +58,7 @@
       </a-entity>
 
       <a-entity id="scene-1" visible="true">
-
-        <a-sky  
+        <a-sky
           id="image-360"
           src="#background"
           radius="150"
@@ -68,9 +67,34 @@
         <!-- <a-sky color="#9bd1fd"></a-sky> -->
         <a-entity
           class="link"
-          position="0 1.6 -3"
+          position="-1.2 0.866 -1.2"
+          rotation="330 20 0"
           geometry="primitive: plane; height: 1; width: 1"
           material="shader: flat; src: #thumb-1"
+          event-set__1="_event: mousedown; scale: 1 1 1"
+          event-set__2="_event: mouseup; scale: 1.1 1.1 1"
+          event-set__3="_event: mouseenter; scale: 1.1 1.1 1"
+          event-set__4="_event: mouseleave; scale: 1 1 1"
+          onclick="nextScene()"
+        ></a-entity>
+        <a-entity
+          class="link"
+          position="0 0.866 -1.412"
+          rotation="330 0 0"
+          geometry="primitive: plane; height: 1; width: 1"
+          material="shader: flat; src: #thumb-2"
+          event-set__1="_event: mousedown; scale: 1 1 1"
+          event-set__2="_event: mouseup; scale: 1.1 1.1 1"
+          event-set__3="_event: mouseenter; scale: 1.1 1.1 1"
+          event-set__4="_event: mouseleave; scale: 1 1 1"
+          onclick="nextScene()"
+        ></a-entity>
+        <a-entity
+          class="link"
+          position="1.2 0.866 -1.2"
+          rotation="330 -20 0"
+          geometry="primitive: plane; height: 1; width: 1"
+          material="shader: flat; src: #thumb-3"
           event-set__1="_event: mousedown; scale: 1 1 1"
           event-set__2="_event: mouseup; scale: 1.1 1.1 1"
           event-set__3="_event: mouseenter; scale: 1.1 1.1 1"
@@ -82,19 +106,18 @@
       <a-entity id="scene-2" visible="false">
         <a-sky color="#9bd1fd"></a-sky>
         <a-plane
-        position="0 0 -11"
-        rotation="-90 0 0"
-        width="50"
-        height="200"
-        color="#777777"
-      ></a-plane>
+          position="0 0 -11"
+          rotation="-90 0 0"
+          width="50"
+          height="200"
+          color="#777777"
+        ></a-plane>
         <a-gltf-model
-        position="0 0 -30"
-        src="#gwanghwamun"
-        scale="0.9 0.9 0.9"
-      ></a-gltf-model>
+          position="0 0 -30"
+          src="#gwanghwamun"
+          scale="0.9 0.9 0.9"
+        ></a-gltf-model>
       </a-entity>
-
     </a-scene>
   </body>
 </html>
