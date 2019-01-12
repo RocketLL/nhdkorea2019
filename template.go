@@ -17,6 +17,10 @@ func main() {
 
 	files, err := filepath.Glob("templates/*")
 
+	if err != nil {
+		panic(err)
+	}
+
 	for _, file := range files {
 		_, name := filepath.Split(file)
 		name = strings.TrimSuffix(name, path.Ext(file))
