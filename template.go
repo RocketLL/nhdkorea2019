@@ -15,7 +15,7 @@ func main() {
 
 	tmpl := make(map[string]template.HTML)
 
-	files, _ := filepath.Glob("templates/*")
+	files, err := filepath.Glob("templates/*")
 
 	for _, file := range files {
 		_, name := filepath.Split(file)
@@ -24,7 +24,11 @@ func main() {
 		tmpl[name] = template.HTML(string(x[:]))
 		fmt.Println(name)
 	}
-	f, _ := os.OpenFile("index.html", os.O_TRUNC|os.O_CREATE, 0777)
+	f, err := os.OpenFile("index.html", os.O_TRUNC|os.O_CREATE, 0777)
+
+	if err != nil {
+		panic(err)
+	}
 
 	t.Execute(f, tmpl)
 }
