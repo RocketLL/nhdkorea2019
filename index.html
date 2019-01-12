@@ -42,7 +42,7 @@
         </script>
       </a-assets>
 
-      <a-entity id="camera-look" visible="true" camera="active: true" look-controls position="0 1.5 0">
+      <a-entity id="camera-look" visible="true" camera="active: true" look-controls="touchEnabled: true" position="0 1.5 0">
         <a-cursor>
           <a-animation
             begin="click"
@@ -139,7 +139,7 @@
         </a-entity>
         <a-entity
           template="src: #link"
-          data-thumb="#thumb-2"
+          data-thumb="#thumb-3"
           data-from="welcome"
           data-to="modern"
           rotation="330 -20 0"
