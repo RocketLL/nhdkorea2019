@@ -11,7 +11,9 @@ AFRAME.registerComponent("camera-changer", {
         var cameraFrom = document.getElementById(data.from);
         var cameraTo = document.getElementById(data.to);
         cameraFrom.setAttribute("camera", "active: false");
+        cameraFrom.setAttribute("visible", "false");
         cameraTo.setAttribute("camera", "active: true");
+        cameraTo.setAttribute("visible", "true");
 
         el.removeEventListener("click", this.clickHandler);
       };

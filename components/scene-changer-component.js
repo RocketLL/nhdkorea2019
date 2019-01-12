@@ -15,10 +15,15 @@ AFRAME.registerComponent("scene-changer", {
       sceneFrom.setAttribute("visible", "false");
       sceneTo.setAttribute("visible", "true");
 
-      var c = sceneFrom.children;
+      var childrenFrom = sceneFrom.children;
+      var childrenTo = sceneTo.children;
 
-      for (i = 0; i < c.length; i++) {
-        c[i].setAttribute("visible", "false");
+      for (i = 0; i < childrenFrom.length; i++) {
+        childrenFrom[i].setAttribute("visible", "false");
+      }
+
+      for (i = 0; i < childrenTo.length; i++) {
+        childrenTo[i].setAttribute("visible", "true");
       }
 
       el.removeEventListener("click", this.clickHandler);
