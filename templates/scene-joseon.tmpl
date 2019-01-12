@@ -1,0 +1,24 @@
+      <a-entity id="scene-joseon" visible="false">
+        <a-sky color="#9bd1fd"></a-sky>
+        <a-entity
+          template="src: #link"
+          camera-changer="from: camera-look; to: camera-orbit"
+          data-thumb="#thumb-1"
+          data-from="joseon"
+          data-to="museum"
+          rotation="330 0 0"
+          position="0 0.866 -1.412"
+        ></a-entity>
+        <a-plane
+          position="0 0 -11"
+          rotation="-90 0 0"
+          width="50"
+          height="200"
+          color="#777777"
+        ></a-plane>
+        <a-gltf-model
+          position="0 0 -30"
+          src="#gwanghwamun"
+          scale="0.9 0.9 0.9"
+        ></a-gltf-model>
+      </a-entity>

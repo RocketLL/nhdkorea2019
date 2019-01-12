@@ -1,0 +1,31 @@
+      <a-assets>
+        <a-asset-item id="gwanghwamun" src="https://linx.yunkyu.com/selif/ap2kybiw.gltf"></a-asset-item>
+        <a-asset-item id="plate" src="https://linx.yunkyu.com/selif/d5hpcvw8.gltf"></a-asset-item>
+        <img id="background" src="assets/bckgnd.jpg" />
+        <img
+          id="thumb-1"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/1t56s1to.png"
+        />
+        <img
+          id="thumb-2"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/jqf4e7uw.png"
+        />
+        <img
+          id="thumb-3"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/6asc42cu.png"
+        />
+        <script id="link" type="text/html">
+            <a-entity
+            scene-changer="from: ${from}; to: ${to}"
+            geometry="primitive: plane; height: 1; width: 1"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.1 1.1 1"
+            event-set__3="_event: mouseenter; scale: 1.1 1.1 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+          ></a-entity>
+        </script>
+      </a-assets>

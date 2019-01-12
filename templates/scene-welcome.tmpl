@@ -1,0 +1,36 @@
+      <a-entity id="scene-welcome" visible="true">
+        <a-sky
+          id="image-360"
+          src="#background"
+          radius="150"
+          phi-start="90"
+        ></a-sky>
+
+        <a-entity
+          template="src: #link"
+          data-thumb="#thumb-1"
+          data-from="welcome"
+          data-to="joseon"
+          rotation="330 20 0"
+          position="-1.2 0.866 -1.2"
+        >
+        </a-entity>
+        <a-entity
+          template="src: #link"
+          data-thumb="#thumb-2"
+          data-from="welcome"
+          data-to="japan"
+          rotation="330 0 0"
+          position="0 0.866 -1.412"
+        >
+        </a-entity>
+        <a-entity
+          template="src: #link"
+          data-thumb="#thumb-2"
+          data-from="welcome"
+          data-to="modern"
+          rotation="330 -20 0"
+          position="1.2 0.866 -1.2"
+        >
+        </a-entity>
+      </a-entity>

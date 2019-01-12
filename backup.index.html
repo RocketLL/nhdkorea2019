@@ -6,13 +6,14 @@
     <script src="https://unpkg.com/aframe-event-set-component@latest/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-orbit-controls@latest/dist/aframe-orbit-controls.min.js"></script>
     <script src="components/scene-changer-component.js"></script>
-    <script src="components/camera-changer-component.js"></script>
   </head>
   <body>
     <a-scene stats>
       <a-assets>
-        <a-asset-item id="gwanghwamun" src="https://linx.yunkyu.com/selif/ap2kybiw.gltf"></a-asset-item>
-        <a-asset-item id="plate" src="https://linx.yunkyu.com/selif/d5hpcvw8.gltf"></a-asset-item>
+        <a-asset-item
+          id="gwanghwamun"
+          src="assets/gwanghwamun.gltf"
+        ></a-asset-item>
         <img id="background" src="assets/bckgnd.jpg" />
         <img
           id="thumb-1"
@@ -65,36 +66,76 @@
       </a-entity>
 
       <a-entity id="camera-orbit" camera="active: false" orbit-controls position="0 1.5 0">
-        <a-cursor>
-          <a-animation
-            begin="click"
-            easing="ease-in"
-            attribute="scale"
-            fill="backwards"
-            from="0.1 0.1 0.1"
-            to="1 1 1"
-            dur="150"
-          ></a-animation>
-          <a-animation
-            begin="cursor-fusing"
-            easing="ease-in"
-            attribute="scale"
-            from="1 1 1"
-            to="0.1 0.1 0.1"
-            dur="1500"
-          ></a-animation>
-        </a-cursor>
+          <a-cursor>
+            <a-animation
+              begin="click"
+              easing="ease-in"
+              attribute="scale"
+              fill="backwards"
+              from="0.1 0.1 0.1"
+              to="1 1 1"
+              dur="150"
+            ></a-animation>
+            <a-animation
+              begin="cursor-fusing"
+              easing="ease-in"
+              attribute="scale"
+              from="1 1 1"
+              to="0.1 0.1 0.1"
+              dur="1500"
+            ></a-animation>
+          </a-cursor>
+        </a-entity>
+
+      <a-entity id="scene-welcome" visible="true">
+        <a-sky
+          id="image-360"
+          src="#background"
+          radius="150"
+          phi-start="90"
+        ></a-sky>
+
+          <a-entity
+            template="src: #link"
+            data-thumb="#thumb-1"
+            data-from="welcome"
+            data-to="joseon"
+            rotation="330 20 0"
+            position="-1.2 0.866 -1.2"
+          >
+          </a-entity>
+          <a-entity
+            template="src: #link"
+            data-thumb="#thumb-2"
+            data-from="welcome"
+            data-to="japan"
+            rotation="330 0 0"
+            position="0 0.866 -1.412"
+          >
+          </a-entity>
+          <a-entity
+            template="src: #link"
+            data-thumb="#thumb-2"
+            data-from="welcome"
+            data-to="modern"
+            rotation="330 -20 0"
+            position="1.2 0.866 -1.2"
+          >
+          </a-entity>
       </a-entity>
+
       <a-entity id="scene-joseon" visible="false">
         <a-sky color="#9bd1fd"></a-sky>
         <a-entity
-          template="src: #link"
-          camera-changer="from: camera-look; to: camera-orbit"
-          data-thumb="#thumb-1"
-          data-from="joseon"
-          data-to="museum"
-          rotation="330 0 0"
+          scene-changer="from: joseon; to: museum"
           position="0 0.866 -1.412"
+          rotation="330 0 0"
+          geometry="primitive: plane; height: 1; width: 1"
+          material="shader: flat; src: #background"
+          event-set__1="_event: mousedown; scale: 1 1 1"
+          event-set__2="_event: mouseup; scale: 1.1 1.1 1"
+          event-set__3="_event: mouseenter; scale: 1.1 1.1 1"
+          event-set__4="_event: mouseleave; scale: 1 1 1"
         ></a-entity>
         <a-plane
           position="0 0 -11"
@@ -109,58 +150,14 @@
           scale="0.9 0.9 0.9"
         ></a-gltf-model>
       </a-entity>
-
-      <a-entity id="scene-welcome" visible="true">
-        <a-sky
-          id="image-360"
-          src="#background"
-          radius="150"
-          phi-start="90"
-        ></a-sky>
-
-        <a-entity
-          template="src: #link"
-          data-thumb="#thumb-1"
-          data-from="welcome"
-          data-to="joseon"
-          rotation="330 20 0"
-          position="-1.2 0.866 -1.2"
-        >
-        </a-entity>
-        <a-entity
-          template="src: #link"
-          data-thumb="#thumb-2"
-          data-from="welcome"
-          data-to="japan"
-          rotation="330 0 0"
-          position="0 0.866 -1.412"
-        >
-        </a-entity>
-        <a-entity
-          template="src: #link"
-          data-thumb="#thumb-2"
-          data-from="welcome"
-          data-to="modern"
-          rotation="330 -20 0"
-          position="1.2 0.866 -1.2"
-        >
-        </a-entity>
-      </a-entity>
-
       <a-entity id="scene-museum" visible="false">
         <a-sky color="#000000"></a-sky>
-        <a-gltf-model
-          src="#plate"
-          position="0 1.5 0"
-          scale="0.6 0.6 0.6"
-        ></a-gltf-model>
-      </a-entity>
-
-      <a-entity id="scene-modern" visible="false">
-        <a-sky color="#00ff00"></a-sky>
       </a-entity>
       <a-entity id="scene-japan" visible="false">
         <a-sky color="#ff0000"></a-sky>
+      </a-entity>
+      <a-entity id="scene-modern" visible="false">
+        <a-sky color="#00ff00"></a-sky>
       </a-entity>
     </a-scene>
   </body>
