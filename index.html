@@ -64,7 +64,7 @@
         </a-cursor>
       </a-entity>
 
-      <a-entity id="camera-orbit" visible="false" camera="active: false" position="0 1.5 0">
+      <a-entity id="camera-orbit" visible="false" camera="active: false" orbit-controls="initialPosition: 0 1.5 0">
         <a-cursor>
           <a-animation
             begin="click"
@@ -102,7 +102,7 @@
           rotation="-90 0 0"
           width="50"
           height="200"
-          color="#D8B890"
+          color="#ccb77c"
         ></a-plane>
         <a-gltf-model 
           position="19.47219 1.52765 -221.94797" 
@@ -154,9 +154,8 @@
       <a-entity id="scene-museum" visible="false">
         <a-sky color="#000000"></a-sky>
         <a-gltf-model
-          look-controls="reverseMouseDrag: true; reverseTouchDrag: true;"
           src="#plate"
-          position="0 0 0"
+          position="0 1.5 0"
           scale="0.5 0.5 0.5"
         ></a-gltf-model>
       </a-entity>
