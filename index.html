@@ -29,6 +29,11 @@
           crossorigin="anonymous"
           src="https://linx.yunkyu.com/selif/89utcvfm.png"
         />
+        <img
+          id="thumb-home"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/idz12nbf.png"
+        />
         <script id="link" type="text/html">
             <a-entity
             scene-changer="from: ${from}; to: ${to}"
@@ -112,6 +117,15 @@
           visible="" 
           rotation="0 2 0">
         </a-gltf-model>
+        <a-entity
+        visible="false"
+        template="src: #link"
+        data-thumb="#thumb-home"
+        data-from="joseon"
+        data-to="welcome"
+        rotation="330 90 0"
+        position="-1.412 0.866 0"
+      ></a-entity>
       </a-entity>
 
       <a-entity id="scene-welcome" visible="true">
@@ -158,13 +172,40 @@
           position="0 1.5 0"
           scale="0.5 0.5 0.5"
         ></a-gltf-model>
+        <a-entity
+        visible="false"
+        template="src: #link"
+        data-thumb="#thumb-home"
+        data-from="museum"
+        data-to="welcome"
+        rotation="330 90 0"
+        position="-1.412 0.866 0"
+      ></a-entity>
       </a-entity>
 
       <a-entity id="scene-modern" visible="false">
         <a-sky color="#00ff00"></a-sky>
+        <a-entity
+        visible="false"
+        template="src: #link"
+        data-thumb="#thumb-home"
+        data-from="modern"
+        data-to="welcome"
+        rotation="330 90 0"
+        position="-1.412 0.866 0"
+      ></a-entity>
       </a-entity>
       <a-entity id="scene-japan" visible="false">
         <a-sky color="#ff0000"></a-sky>
+        <a-entity
+        visible="false"
+        template="src: #link"
+        data-thumb="#thumb-home"
+        data-from="japan"
+        data-to="welcome"
+        rotation="330 90 0"
+        position="-1.412 0.866 0"
+      ></a-entity>
       </a-entity>
     </a-scene>
   </body>
