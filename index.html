@@ -34,6 +34,11 @@
           crossorigin="anonymous"
           src="https://linx.yunkyu.com/selif/idz12nbf.png"
         />
+        <img
+          id="dirt"
+          crossorigin="anonymous"
+          src="https://linx.yunkyu.com/selif/au3qqvbf.png"
+        />
         <script id="link" type="text/html">
             <a-entity
             scene-changer="from: ${from}; to: ${to}"
@@ -103,11 +108,12 @@
           position="0 0.866 -1.412"
         ></a-entity>
         <a-plane
+          src="#dirt"
           position="0 0 -11"
           rotation="-90 0 0"
           width="50"
           height="200"
-          color="#ccb77c"
+          repeat="10 40"
         ></a-plane>
         <a-gltf-model 
           position="19.47219 1.52765 -221.94797" 
@@ -207,6 +213,7 @@
         position="-1.412 0.866 0"
       ></a-entity>
       </a-entity>
+      
     </a-scene>
   </body>
 </html>
