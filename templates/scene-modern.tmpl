@@ -1,12 +1,26 @@
       <a-entity id="scene-modern" visible="false">
-        <a-sky color="#00ff00"></a-sky>
+        <a-sky
+          id="image-360"
+          src="#background"
+          radius="150"
+          phi-start="90"
+        ></a-sky>
         <a-entity
-        visible="false"
-        template="src: #link"
-        data-thumb="#thumb-home"
-        data-from="modern"
-        data-to="menu"
-        rotation="330 90 0"
-        position="-1.412 0.866 0"
-      ></a-entity>
+          visible="false"
+          template="src: #link"
+          data-thumb="#thumb-home"
+          data-from="modern"
+          data-to="menu"
+          position="0 0.2 0"
+          rotation="-90 0 0"
+        ></a-entity>
+        <a-entity
+          visible="false"
+          template="src: #link"
+          data-thumb="#thumb-3"
+          data-from="modern"
+          data-to="modern"
+          rotation="330 0 0"
+          position="0 0.866 -1.412"
+        ></a-entity>
       </a-entity>

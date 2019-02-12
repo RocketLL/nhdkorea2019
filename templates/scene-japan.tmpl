@@ -1,13 +1,37 @@
       <a-entity id="scene-japan" visible="false">
-        <a-sky color="#ff0000"></a-sky>
+        <a-sky color="#b3c4d1"></a-sky>
         <a-entity
-        visible="false"
-        template="src: #link"
-        data-thumb="#thumb-home"
-        data-from="japan"
-        data-to="menu"
-        rotation="330 90 0"
-        position="-1.412 0.866 0"
-      ></a-entity>
+          visible="false"
+          template="src: #link"
+          data-thumb="#thumb-home"
+          data-from="japan"
+          data-to="menu"
+          position="0 0.2 0"
+          rotation="-90 0 0"
+        ></a-entity>
+        <a-plane
+          src="#dirt"
+          position="0 0 -11"
+          rotation="-90 0 0"
+          width="150"
+          height="150"
+          repeat="60 60"
+        ></a-plane>
+        <a-gltf-model 
+          position="-14.5 0 -120" 
+          src="#japanbuilding" 
+          scale="0.9 0.9 0.9" 
+          gltf-model="https://linx.yunkyu.com/selif/hrxhkjf2.gltf"
+          visible="" 
+          rotation="0 0 0">
+        </a-gltf-model>
+        <a-entity
+          visible="false"
+          template="src: #link"
+          data-thumb="#thumb-2"
+          data-from="japan"
+          data-to="japan"
+          rotation="330 0 0"
+          position="0 0.866 -1.412"
+        ></a-entity>
       </a-entity>
-      

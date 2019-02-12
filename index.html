@@ -13,6 +13,9 @@
       <a-assets>
         <a-asset-item id="gwanghwamun" src="https://linx.yunkyu.com/selif/ap2kybiw.gltf"></a-asset-item>
         <a-asset-item id="plate" src="https://linx.yunkyu.com/selif/d5hpcvw8.gltf"></a-asset-item>
+        <a-asset-item id="jeongdojeon" src="https://linx.yunkyu.com/selif/ulurguax.gltf"></a-asset-item>
+        <a-asset-item id="book" src="https://linx.yunkyu.com/selif/o7gbsbas.gltf"></a-asset-item>
+        <a-asser-item id="japanbuilding" src="https://linx.yunkyu.com/selif/hrxhkjf2.gltf"></a-asset-item>
         <img id="background" src="https://linx.yunkyu.com/selif/bckgnd.jpg" />
         <img
           id="thumb-1"
@@ -32,7 +35,7 @@
         <img
           id="thumb-home"
           crossorigin="anonymous"
-          src="https://linx.yunkyu.com/selif/idz12nbf.png"
+          src="https://linx.yunkyu.com/selif/grw6nocw.png"
         />
         <img
           id="dirt"
@@ -100,10 +103,9 @@
         <a-entity
           visible="false"
           template="src: #link"
-          camera-changer="from: camera-look; to: camera-orbit"
           data-thumb="#thumb-1"
           data-from="joseon"
-          data-to="museum"
+          data-to="joseon"
           rotation="330 0 0"
           position="0 0.866 -1.412"
         ></a-entity>
@@ -113,7 +115,7 @@
           rotation="-90 0 0"
           width="50"
           height="200"
-          repeat="10 40"
+          repeat="20 80"
         ></a-plane>
         <a-gltf-model 
           position="19.47219 1.52765 -221.94797" 
@@ -129,8 +131,8 @@
         data-thumb="#thumb-home"
         data-from="joseon"
         data-to="menu"
-        rotation="330 90 0"
-        position="-1.412 0.866 0"
+        position="0 0.2 0"
+        rotation="-90 0 0"
       ></a-entity>
       </a-entity>
 
@@ -171,49 +173,70 @@
         </a-entity>
       </a-entity>
 
-      <a-entity id="scene-museum" visible="false">
-        <a-sky color="#000000"></a-sky>
-        <a-gltf-model
-          src="#plate"
-          position="0 1.5 0"
-          scale="0.5 0.5 0.5"
-        ></a-gltf-model>
-        <a-entity
-        visible="false"
-        template="src: #link"
-        data-thumb="#thumb-home"
-        data-from="museum"
-        data-to="menu"
-        rotation="330 90 0"
-        position="-1.412 0.866 0"
-      ></a-entity>
-      </a-entity>
-
       <a-entity id="scene-modern" visible="false">
-        <a-sky color="#00ff00"></a-sky>
+        <a-sky
+          id="image-360"
+          src="#background"
+          radius="150"
+          phi-start="90"
+        ></a-sky>
         <a-entity
-        visible="false"
-        template="src: #link"
-        data-thumb="#thumb-home"
-        data-from="modern"
-        data-to="menu"
-        rotation="330 90 0"
-        position="-1.412 0.866 0"
-      ></a-entity>
+          visible="false"
+          template="src: #link"
+          data-thumb="#thumb-home"
+          data-from="modern"
+          data-to="menu"
+          position="0 0.2 0"
+          rotation="-90 0 0"
+        ></a-entity>
+        <a-entity
+          visible="false"
+          template="src: #link"
+          data-thumb="#thumb-3"
+          data-from="modern"
+          data-to="modern"
+          rotation="330 0 0"
+          position="0 0.866 -1.412"
+        ></a-entity>
       </a-entity>
       <a-entity id="scene-japan" visible="false">
-        <a-sky color="#ff0000"></a-sky>
+        <a-sky color="#b3c4d1"></a-sky>
         <a-entity
-        visible="false"
-        template="src: #link"
-        data-thumb="#thumb-home"
-        data-from="japan"
-        data-to="menu"
-        rotation="330 90 0"
-        position="-1.412 0.866 0"
-      ></a-entity>
+          visible="false"
+          template="src: #link"
+          data-thumb="#thumb-home"
+          data-from="japan"
+          data-to="menu"
+          position="0 0.2 0"
+          rotation="-90 0 0"
+        ></a-entity>
+        <a-plane
+          src="#dirt"
+          position="0 0 -11"
+          rotation="-90 0 0"
+          width="150"
+          height="150"
+          repeat="60 60"
+        ></a-plane>
+        <a-gltf-model 
+          position="-14.5 0 -120" 
+          src="#japanbuilding" 
+          scale="0.9 0.9 0.9" 
+          gltf-model="https://linx.yunkyu.com/selif/hrxhkjf2.gltf"
+          visible="" 
+          rotation="0 0 0">
+        </a-gltf-model>
+        <a-entity
+          visible="false"
+          template="src: #link"
+          data-thumb="#thumb-2"
+          data-from="japan"
+          data-to="japan"
+          rotation="330 0 0"
+          position="0 0.866 -1.412"
+        ></a-entity>
       </a-entity>
-      
+
     </a-scene>
   </body>
 </html>
