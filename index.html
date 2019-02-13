@@ -15,7 +15,7 @@
         <a-asset-item id="plate" src="https://linx.yunkyu.com/selif/d5hpcvw8.gltf"></a-asset-item>
         <a-asset-item id="jeongdojeon" src="https://linx.yunkyu.com/selif/ulurguax.gltf"></a-asset-item>
         <a-asset-item id="book" src="https://linx.yunkyu.com/selif/o7gbsbas.gltf"></a-asset-item>
-        <a-asser-item id="japanbuilding" src="https://linx.yunkyu.com/selif/hrxhkjf2.gltf"></a-asset-item>
+        <a-asset-item id="japanbuilding" src="https://linx.yunkyu.com/selif/hrxhkjf2.gltf"></a-asset-item>
         <img id="background" src="https://linx.yunkyu.com/selif/bckgnd.jpg" />
         <img
           id="thumb-1"
@@ -53,6 +53,7 @@
             event-set__4="_event: mouseleave; scale: 1 1 1"
           ></a-entity>
         </script>
+        <video id="chotbul" autoplay loop="true" src="../assets/chotbul.mp4"></video>
       </a-assets>
 
       <a-entity id="camera-look" visible="true" camera="active: true" look-controls="touchEnabled: true" position="0 1.5 0">
@@ -136,7 +137,7 @@
       ></a-entity>
       </a-entity>
 
-      <a-entity id="scene-menu" visible="true">
+      <a-entity id="scene-menu" visible="false">
         <a-sky
           id="image-360"
           src="#background"
@@ -145,6 +146,7 @@
         ></a-sky>
 
         <a-entity
+          visible="false"
           template="src: #link"
           data-thumb="#thumb-1"
           data-from="menu"
@@ -154,6 +156,7 @@
         >
         </a-entity>
         <a-entity
+          visible="false"
           template="src: #link"
           data-thumb="#thumb-2"
           data-from="menu"
@@ -163,6 +166,7 @@
         >
         </a-entity>
         <a-entity
+          visible="false"
           template="src: #link"
           data-thumb="#thumb-3"
           data-from="menu"
@@ -174,12 +178,13 @@
       </a-entity>
 
       <a-entity id="scene-modern" visible="false">
-        <a-sky
+        <!-- <a-sky
           id="image-360"
           src="#background"
           radius="150"
           phi-start="90"
-        ></a-sky>
+        ></a-sky> -->
+        <a-videosphere autoplay src="/assets/chotbul.mp4"></a-videosphere>
         <a-entity
           visible="false"
           template="src: #link"
@@ -304,6 +309,24 @@
         ></a-entity>
     </a-entity>
     
+  <a-entity id="scene-welcome" visible="true">
+    <a-sky
+      radius="150"
+      color="#000000"
+    ></a-sky>
+    <a-entity text="value: Gwanghwamun: A Virtual Experience; align: center; width: 5;" position="0 1.5 -1.7"></a-entity>
+    <a-entity
+      visible="true"
+      template="src: #link"
+      data-thumb="#thumb-1"
+      data-from="welcome"
+      data-to="menu"
+      rotation="330 0 0"
+      position="0 0.866 -1.412"
+    >
+  </a-entity>
+
+
     </a-scene>
   </body>
 </html>
